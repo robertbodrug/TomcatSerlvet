@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Flip Clock with Tailwind</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css'>
+
+</head>
+<body>
+<span th:text= "${data}">2022-01-05 12:05:01 UTC+2</span>
+
+<!-- partial:index.partial.html -->
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-800">
+  <!-- clock wrapper -->
+  <div class="relative font-mono font-extrabold text-9xl grid grid-cols-2 text-right text-white shadow-2xl gap-x-px border-8 border-yellow-100 rounded">
+
+    <!-- clock stand -->
+    <div class="absolute inset-x-0 -bottom-5 mx-auto flex justify-center">
+      <div class="w-3/4 h-5 bg-yellow-100 rounded"></div>
+    </div>
+
+    <!-- left timer -->
+    <div class="relative py-8 px-5">
+      <div class="absolute inset-0 w-full h-full grid grid-rows-2">
+
+        <!-- background squares -->
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900"></div>
+        <div class="bg-gradient-to-br from-gray-700 to-gray-900"></div>
+      </div>
+
+      <div class="relative" th:text= "${hours}">5</div>
+
+      <!-- line across middle -->
+      <div class="absolute inset-0 w-full h-full flex items-center justify-center">
+        <div class="h-px w-full bg-gray-800"></div>
+      </div>
+    </div>
+
+    <!-- right timer -->
+    <div class="relative py-8 px-5">
+      <div class="absolute inset-0 w-full h-full grid grid-rows-2">
+
+        <!-- background squares -->
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900"></div>
+        <div class="bg-gradient-to-br from-gray-700 to-gray-900"></div>
+      </div>
+
+      <div class="relative" th:text= "${minutes}">6</div>
+
+      <!-- line across middle -->
+      <div class="absolute inset-0 w-full h-full flex items-center justify-center">
+        <div class="h-px w-full bg-gray-800"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- partial -->
+
+</body>
+</html>
